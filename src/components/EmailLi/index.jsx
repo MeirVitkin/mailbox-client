@@ -15,10 +15,10 @@ export const EmailLi = ({ email }) => {
 
     return (
         <div className={styles.container}  >
-            <div className={styles.img}><img src="./vite.svg" alt="" /></div>
+            <img className={styles.img} src="./profile pic.jpg" alt="" />
             <div className={styles.content} >
                 <h3>Jessica Koel</h3>
-                <p> {subject} </p>
+                <p className={styles.text}> {subject} </p>
             </div>
             <div className={styles.timeAndBadgeContainor} >
                                     <p>11:34</p>
