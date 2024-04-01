@@ -15,7 +15,7 @@ export const EmailLi = ({ email }) => {
 
     return (
         <div className={styles.container}  >
-            <img className={styles.img} src="./profile pic.jpg" alt="" />
+            <img className={styles.img} src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/media_bank/202309/elon-musk-252648408-16x9.jpg?VersionId=9KYZpqpoY3WvH8eVZg54mmkpTGfvPCWj&size=690:388" alt="" />
             <div className={styles.content} >
                 <h3>Jessica Koel</h3>
                 <p className={styles.text}> {subject} </p>

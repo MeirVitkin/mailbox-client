@@ -7,6 +7,27 @@ p{
 
     color:var(--text-color);
 }
+.container{
+    display: flex;
+    flex-direction: column;
+    border-bottom: #DEE1E6 1px solid;
+    
+}
+
+.headerContainer {
+    display: flex;
+    height: 65px;
+    align-items: center;
+    padding: 8px;
+    gap: 10px;
+    background-color: #FFFFFF;
+}
+
+.expandedContainer{
+
+   min-height: 250px;
+
+}
 .text{
     white-space: nowrap;
     overflow: hidden;
@@ -14,16 +35,7 @@ p{
     flex-grow: 1;
 
 }
-.container {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    gap: 10px;
-    background-color: #FFFFFF;
-}
 
-.content {
-}
 
 .img{
 
@@ -32,12 +44,14 @@ p{
     padding: 7px;
     border-radius: 50%;
     background-color: var(--primary-color);
+    flex-shrink: 0;
 }
 .svg {
     color: var(--text-color);
     font-size: 35px;
-    width: 42px;
-    height: 42px;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
 }
 .line{
     border-bottom: #DEE1E6 1px solid;

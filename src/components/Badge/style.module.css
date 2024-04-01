@@ -1,4 +1,6 @@
 .container{
+    width: 25px;
+    height: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,7 +8,7 @@
     padding: 3.8px;
     border-radius: 7px;
     color: #FFFFFF;
-    box-shadow: 0 5px 10px rgba(75, 74, 74, 0.5);
+    box-shadow: 0 3px 6px rgba(75, 74, 74, 0.5);
     
 
     ;

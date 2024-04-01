@@ -1,3 +1,10 @@
+import { HiInboxIn } from "react-icons/hi";
+import { IoIosSend } from "react-icons/io";
+import { TiStarFullOutline } from "react-icons/ti";
+import { MdDeleteForever } from "react-icons/md";
+import { BiSolidPencil } from "react-icons/bi";
+import { MdExpandMore } from "react-icons/md";
+
 
 import { EmailLi } from "./components/EmailLi"
 import { EmailTitle } from "./components/EmailTitle"
@@ -5,6 +12,8 @@ import { InputSearch } from "./components/InputSearch"
 import { MsgLi } from "./components/MsgLi"
 import { NewMsgBtn } from "./components/NewMsgBtn"
 import { SendBtn } from "./components/SendBtn"
+import { NavLi } from "./components/NavLi";
+import { TrashBtn } from "./components/TrashBtn";
 const user = { "userId": "602c49ceb02aca8db6f826d", "mail": "user2@example.com" }
 const email = [
   {
@@ -79,7 +88,7 @@ const email = [
           "to": ["user2@example.com"],
           "from": "user3@example.com",
           "date": "2024-03-20T10:57:00.000Z",
-          "content": "why whyyyyyyy?!?!",
+          "content": "Thank you for reaching out to inquire about the availability of our products. We are pleased to inform you that the item you are interested in is currently in stock and ready for purchase. You can place your order directly through our website https://practicum.workin.co.il  to make a purchase in person.Thank you for considering our products.",
           "subject": "Report Request",
           "__v": 0
         },
@@ -103,10 +112,24 @@ const email = [
     "_id": "6602c49eeb02aca8db6f8288"
   }
 ]
-
+const icons = [{ icon: <HiInboxIn />, name: "inbox" },
+ { icon: <IoIosSend />, name: "Sent Emails" },
+ { icon: <TiStarFullOutline />, name: "Favorite" },
+ {icon: <BiSolidPencil />, name: "Draft" },
+ { icon: <MdDeleteForever />, name: "Deleted" },
+ { icon: <MdExpandMore />, name: "More" }
+ ]
 function App() {
   return (
     <div style={{ display: 'flex', gap: '10px' }}>
+      <div style={{ width: '200px', display: 'flex', flexDirection: 'column' }}>
+        {icons.map((icon,index)=>(
+          <NavLi key={index} iconObj={icon} notifications={false} />
+
+        ))}
+         
+      </div>
+
       <div style={{ width: '372px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
         <div style={{ width: '365px' }}> <InputSearch /> </div>
         <div style={{ width: '249px', height: '51px' }}><NewMsgBtn /></div>
@@ -115,15 +138,15 @@ function App() {
         <EmailLi email={email[0]} />
         <div style={{ width: '114px', height: '51px' }}> <SendBtn /> </div>
       </div>
-      <div style={{ width: '649px', display: 'flex', flexDirection: 'column', gap: '10px',backgroundColor:'#ffff',padding:'10px' }}>
-        <div style={{ width: '649px', height: '147px',padding:'10px' }}> <EmailTitle email={email[0].email} /> </div>
+      <div style={{ width: '649px', display: 'flex', flexDirection: 'column', gap: '10px', backgroundColor: '#ffff', padding: '10px' }}>
+        <div style={{ width: '649px', height: '147px', padding: '10px' }}> <EmailTitle email={email[0].email} /> </div>
         <div style={{ width: '598px' }}>
-          {/* {email[0].email.msg.map((msg) => (
-            <div key= {msg._id} style={{ width: '598px', height: '65px' }}> <MsgLi  msg={msg} user={user} /></div>
-          ))} */}
-          {email[1].email.msg.map((msg) => (
-            <div key= {msg._id} style={{ width: '598px', height: '65px' }}> <MsgLi  msg={msg} user={user} /></div>
-          ))}
+          <div style={{ width: '598px' }}>
+            {email[1].email.msg.map((msg) => (
+              <MsgLi key={msg._id} msg={msg} user={user} />
+            ))}
+            <TrashBtn/>
+          </div>
         </div>
       </div>
     </div>
