@@ -1,0 +1,53 @@
+
+.container {
+    display: flex;
+    padding: 8px;
+    gap: 10px;
+    background-color: var(--gray-bg-color);
+}
+
+.container:hover {
+    box-shadow: 0 5px 5px rgba(75, 74, 74, 0.5);
+    cursor: pointer;
+}
+.container:active{
+    background-color: #ffff;
+
+}
+
+.content {
+    flex-grow: 1;
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.img {
+
+    width: 42px;
+    height: 42px;
+    padding: 7px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+.timeAndBadgeContainor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.badge {
+    width: 27px;
+}
+
+.not-favorite {
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.favorite {
+    color: var(--primary-color);
+    font-size: 20px;
+}

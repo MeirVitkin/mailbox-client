@@ -1,0 +1,17 @@
+
+.container{
+    display: flex;
+    color: #ffff;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: var(--primary-color);
+    
+}
+
+.svg {
+    color: #ffff;
+    font-size: 20px;
+    line-height: 18.6px;
+
+}
