@@ -1,0 +1,19 @@
+.container {
+    height: 41px;
+    width: 65px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+  .trash {
+    color: #d6dce4;
+    width: 16px;
+    height: 17px;
+  }
+  .more {
+    color: #d6dce4;
+    width: 4px;
+    height: 16px;
+  }
+  
