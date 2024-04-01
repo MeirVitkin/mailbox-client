@@ -14,6 +14,8 @@ import { NewMsgBtn } from "./components/NewMsgBtn"
 import { SendBtn } from "./components/SendBtn"
 import { NavLi } from "./components/NavLi";
 import { TrashBtn } from "./components/TrashBtn";
+import { NavMain } from "./components/Navmain";
+import { Logo } from "./components/Logo";
 const user = { "userId": "602c49ceb02aca8db6f826d", "mail": "user2@example.com" }
 const email = [
   {
@@ -112,7 +114,8 @@ const email = [
     "_id": "6602c49eeb02aca8db6f8288"
   }
 ]
-const icons = [{ icon: <HiInboxIn />, name: "inbox" },
+
+const NavIcons = [{ icon: <HiInboxIn />, name: "inbox" },
  { icon: <IoIosSend />, name: "Sent Emails" },
  { icon: <TiStarFullOutline />, name: "Favorite" },
  {icon: <BiSolidPencil />, name: "Draft" },
@@ -121,31 +124,39 @@ const icons = [{ icon: <HiInboxIn />, name: "inbox" },
  ]
 function App() {
   return (
-    <div style={{ display: 'flex', gap: '10px' }}>
+    <div style={{ display: 'flex',  height:'100vh' }}>
+      <div style={{ display: 'flex', flexDirection: 'column',height:'100vh' }}><NavMain/>  </div>
       <div style={{ width: '200px', display: 'flex', flexDirection: 'column' }}>
-        {icons.map((icon,index)=>(
-          <NavLi key={index} iconObj={icon} notifications={false} />
-
-        ))}
+        <div style={{ display: 'flex', gap: '20px',flexDirection:'column',backgroundColor:'#ffff', height:'100vh', padding:'20px'}} >
+          <Logo/>
+          <div style={{  height: '51px'}}><NewMsgBtn /></div>
+          <div>
+          {NavIcons.map((icon,index)=>(
+            <NavLi key={index} iconObj={icon} notifications={false} />
+          ))}
+          </div>
+          </div>
          
       </div>
 
-      <div style={{ width: '372px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-        <div style={{ width: '365px' }}> <InputSearch /> </div>
-        <div style={{ width: '249px', height: '51px' }}><NewMsgBtn /></div>
+      <div style={{ width: '300px', display: 'flex', flexDirection: 'column', gap: '10px' , height:'100vh'  }}>
+        <div style={{ width: '295px'}}> <InputSearch /> </div>
         <EmailLi email={email[0]} />
         <EmailLi email={email[1]} />
         <EmailLi email={email[0]} />
-        <div style={{ width: '114px', height: '51px' }}> <SendBtn /> </div>
       </div>
-      <div style={{ width: '649px', display: 'flex', flexDirection: 'column', gap: '10px', backgroundColor: '#ffff', padding: '10px' }}>
-        <div style={{ width: '649px', height: '147px', padding: '10px' }}> <EmailTitle email={email[0].email} /> </div>
-        <div style={{ width: '598px' }}>
-          <div style={{ width: '598px' }}>
+      <div style={{ width: '549px', display: 'flex', flexDirection: 'column', gap: '10px', backgroundColor: '#ffff', padding: '10px', height:'100vh'  }}>
+        <div style={{ width: '498px', height: '147px', padding: '10px' }}> <EmailTitle email={email[0].email} /> </div>
+        <div style={{ width: '498px'}}>
+          <div style={{ width: '498px' }}>
             {email[1].email.msg.map((msg) => (
               <MsgLi key={msg._id} msg={msg} user={user} />
-            ))}
+              ))}
+            <div style={{ display: 'flex', justifyContent:'end',gap:'10px'  }}>
             <TrashBtn/>
+            <div style={{ width: '114px', height: '51px' }}> <SendBtn /> </div>
+
+            </div>
           </div>
         </div>
       </div>
