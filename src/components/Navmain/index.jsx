@@ -11,7 +11,7 @@ const NvaMainIcons = [<MdAvTimer/>,<MdOutlineCheckBox/>,<GoEye/>,<IoMdContacts/>
 export const NavMain = () => {
   return (
     <div className={styles.container}>
-        <div ><img className={styles.logo} src='./public/vite.svg' /></div>
+        <div ><img className={styles.logo} src='./public/logo-mail-box.png' /></div>
         <nav >
           <ul className={styles.iconsContainer}>
             {NvaMainIcons.map((icon, index) =>(
