@@ -1,6 +1,6 @@
 .container{
    display: flex;
-   gap: 10px;
+   gap: 12px;
    height: 40px;
    padding: 10px;
     background-color:#ffff
@@ -14,8 +14,8 @@
     font-weight: 500;
     font-size: 15px;
 }
-.icon{
+/* .icon{
     color: var(--text-color);
     width: 30px;
     height: 24px;
-}
+} */

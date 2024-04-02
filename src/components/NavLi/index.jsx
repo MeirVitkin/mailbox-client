@@ -1,6 +1,7 @@
 import { Badge } from '../Badge';
 import styles from './style.module.css';
 
+
 export const NavLi = ({iconObj,notifications}) => {
     const{icon, name} = iconObj
   return (

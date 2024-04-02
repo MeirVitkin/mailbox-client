@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
-import styles from './style.module.css'
-import { EmailLi } from '../EmailLi'
-import { InputSearch } from '../InputSearch'
+import { EmailTitle } from '../../components/EmailTitle';
+import { MsgLi } from '../../components/MsgLi';
+import { SendBtn } from '../../components/SendBtn';
+import { TextArae } from '../../components/TexArea';
+import { TrashBtn } from '../../components/TrashBtn';
+import styles from './style.module.css';
+
 
 const emails = [
     {
@@ -100,23 +103,21 @@ const emails = [
         "_id": "6602c49eeb02aca8db6f8288"
     }
 ]
-
-export const EmailsList = () => {
-    const[emailList, setImelList]=useState(emails)
-
-    const hendalSearch = (value) => {
-        const fiteredEmails = emails.filter(email => email.email.subject.toLowerCase().includes(value) || email.email.lastDate.includes(value) )
-        setImelList(fiteredEmails);   
-    }
+const user = { "userId": "602c49ceb02aca8db6f826d", "mail": "user2@example.com" }
 
 
-
+export const EmailPage = () => {
     return (
-        <>
-            <div className={styles.contaner} >
-                <div className={styles.inputSearch}> <InputSearch hendalSearch={hendalSearch} /> </div>
-                {emailList.map((email, i) => (<EmailLi email={email} key={i} />))}
+        <div className={styles.container} >
+            <EmailTitle email={emails[0].email} />
+            {emails[1].email.msg.map((msg) => (
+                <MsgLi key={msg._id} msg={msg} user={user} />
+            ))}
+            <TextArae />
+            <div className={styles.SendBtnContainer}  >
+                <TrashBtn />
+                <SendBtn />
             </div>
-        </>
+        </div>
     )
 }
