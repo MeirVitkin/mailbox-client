@@ -16,6 +16,7 @@ import { NavLi } from "./components/NavLi";
 import { TrashBtn } from "./components/TrashBtn";
 import { NavMain } from "./components/Navmain";
 import { Logo } from "./components/Logo";
+import { TextArae } from "./components/TexArea";
 const user = { "userId": "602c49ceb02aca8db6f826d", "mail": "user2@example.com" }
 const email = [
   {
@@ -125,7 +126,7 @@ const NavIcons = [{ icon: <HiInboxIn />, name: "inbox" },
 function App() {
   return (
     <div style={{ display: 'flex',  height:'100vh' }}>
-      <div style={{ display: 'flex', flexDirection: 'column',height:'100vh' }}><NavMain/>  </div>
+      <div style={{height:'100vh' }}><NavMain/>  </div>
       <div style={{ width: '200px', display: 'flex', flexDirection: 'column' }}>
         <div style={{ display: 'flex', gap: '20px',flexDirection:'column',backgroundColor:'#ffff', height:'100vh', padding:'20px'}} >
           <Logo/>
@@ -152,6 +153,7 @@ function App() {
             {email[1].email.msg.map((msg) => (
               <MsgLi key={msg._id} msg={msg} user={user} />
               ))}
+              <TextArae/>
             <div style={{ display: 'flex', justifyContent:'end',gap:'10px'  }}>
             <TrashBtn/>
             <div style={{ width: '114px', height: '51px' }}> <SendBtn /> </div>

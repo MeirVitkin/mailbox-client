@@ -15,9 +15,8 @@ body{
 
 a,input,select, button{
   font: inherit;
-  border: inherit;
+  border: none;
   background-color: inherit;
-  border: inherit;
   outline: none;
 }
 a{

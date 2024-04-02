@@ -12,10 +12,12 @@ export const NavMain = () => {
   return (
     <div className={styles.container}>
         <div ><img className={styles.logo} src='./public/vite.svg' /></div>
-        <nav className={styles.iconsContainer}>
+        <nav >
+          <ul className={styles.iconsContainer}>
             {NvaMainIcons.map((icon, index) =>(
-                <li key={index} className={styles.icon}> {icon}</li>
+                <li key={index} > <a title= 'link' href="/login"> <div className={styles.icon}>{icon}</div> </a> </li>
                 ))}
+          </ul>
         </nav>
         <div ><img className={styles.img} src='./public/vite.svg' /></div>
     </div>
