@@ -5,8 +5,14 @@ import { GoEye } from "react-icons/go";
 import { IoMdContacts } from "react-icons/io";
 import { VscGraph } from "react-icons/vsc";
 import { IoVideocam } from "react-icons/io5";
+import { Outlet } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
-const NvaMainIcons = [<MdAvTimer/>,<MdOutlineCheckBox/>,<GoEye/>,<IoMdContacts/>,<VscGraph/>,<IoVideocam/>,]
+const NavMainIconsObj = [{ icon:<MdAvTimer/>,title:'timer'},
+{ icon:<MdOutlineCheckBox/>,title:'task'},
+{ icon:<GoEye/>,title:'eye'},
+{ icon:<IoMdContacts/>,title:'messages'},
+{ icon:<VscGraph/>,title:'graph'},{ icon:<IoVideocam/>,title:'video'},]
 
 export const NavMain = () => {
   return (
@@ -14,8 +20,13 @@ export const NavMain = () => {
         <div ><img className={styles.logo} src='./public/logo-mail-box.png' /></div>
         <nav >
           <ul className={styles.iconsContainer}>
-            {NvaMainIcons.map((icon, index) =>(
-                <li key={index} > <a title= 'link' href="/login"> <div className={styles.icon}>{icon}</div> </a> </li>
+            {NavMainIconsObj.map((iconObj, index) =>(
+                <li key={index} > 
+                <NavLink 
+                  to={iconObj.title}
+                 >
+                  <div className={styles.icon}>{iconObj.icon}</div>
+                  </NavLink>    </li>
                 ))}
           </ul>
         </nav>

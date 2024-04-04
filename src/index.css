@@ -8,7 +8,7 @@
 body{
   background-color:var(--gray-bg-color);
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   /* align-items: center; */
   height: 100vh;
 }
@@ -29,4 +29,11 @@ a{
   --primary-color:#00A389;
   --gray-bg-color:#F4F6F8;
 
+}
+::-webkit-scrollbar{
+  width: 2px;
+  color: var(--text-color);
+}
+::-webkit-scrollbar-thumb{
+  color: var(--primary-color);
 }

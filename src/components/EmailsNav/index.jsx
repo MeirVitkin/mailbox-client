@@ -10,6 +10,8 @@ import { TiStarFullOutline } from "react-icons/ti";
 import { MdDeleteForever } from "react-icons/md";
 import { BiSolidPencil } from "react-icons/bi";
 import { MdExpandMore } from "react-icons/md";
+import { Outlet } from 'react-router';
+import { NavLink } from 'react-router-dom';
 
 
 const NavIcons = [{ icon: <HiInboxIn />, name: "inbox" },
@@ -20,18 +22,22 @@ const NavIcons = [{ icon: <HiInboxIn />, name: "inbox" },
 { icon: <MdExpandMore />, name: "More" }
 ]
 
-export const EmailNav = () => {
+export const EmailsNav = () => {
     return (
+        <>
             <div className={styles.container}  >
                 <Logo />
                 <div className={styles.mewMsg}  ><a title='link' href="/login"><NewMsgBtn /> </a></div>
                 <nav>
                     <ul>
                         {NavIcons.map((icon, index) => (
-                            <li> <a title='link' href="/login"><NavLi key={index} iconObj={icon} /> </a> </li>
+                            <li key={index}>
+                                <NavLink to={icon.name}><NavLi iconObj={icon} /> </NavLink>
+                            </li>
                         ))}
                     </ul>
                 </nav>
             </div>
+        </>
     )
 }
