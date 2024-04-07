@@ -1,4 +1,7 @@
 
+/* li{
+    text-align: -webkit-match-parent;
+} */
 
 .container{
     display:flex ;
@@ -9,6 +12,10 @@
     gap: 20px;
     padding: 20px;
 
+}
+.active{
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
 }
 
 

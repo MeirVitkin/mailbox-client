@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styles from './style.module.css';
 import { TbMailFilled } from "react-icons/tb";
 export const NewMsgBtn = () => {

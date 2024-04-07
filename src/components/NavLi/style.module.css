@@ -5,17 +5,10 @@
    padding: 10px;
     background-color:#ffff
 }
-.container:hover{
-    cursor: pointer;
-}
+
 .text{
     flex-grow: 1;
     color: #071232;
     font-weight: 500;
     font-size: 15px;
 }
-/* .icon{
-    color: var(--text-color);
-    width: 30px;
-    height: 24px;
-} */

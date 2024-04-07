@@ -105,7 +105,7 @@ export const EmailsList = () => {
     const[emailList, setImelList]=useState(emails)
 
     const hendalSearch = (value) => {
-        const fiteredEmails = emails.filter(email => email.email.subject.toLowerCase().includes(value) || email.email.lastDate.includes(value) )
+        const fiteredEmails = emails.filter(email => email.email.subject.toLowerCase().includes(value.toLowerCase()) || email.email.lastDate.includes(value) )
         setImelList(fiteredEmails);   
     }
 

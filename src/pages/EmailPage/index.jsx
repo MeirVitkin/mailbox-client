@@ -1,9 +1,11 @@
+import { useParams } from 'react-router';
 import { EmailTitle } from '../../components/EmailTitle';
 import { MsgLi } from '../../components/MsgLi';
 import { SendBtn } from '../../components/SendBtn';
 import { TextArae } from '../../components/TexArea';
 import { TrashBtn } from '../../components/TrashBtn';
 import styles from './style.module.css';
+
 
 
 const emails = [
@@ -107,12 +109,16 @@ const user = { "userId": "602c49ceb02aca8db6f826d", "mail": "user2@example.com" 
 
 
 export const EmailPage = () => {
+    const { emailId } = useParams()
+    const EmailObj = emails.filter(e => e.email._id !== emailId);
     return (
         <div className={styles.container} >
-            <EmailTitle email={emails[0].email} />
-            {emails[1].email.msg.map((msg) => (
+            <EmailTitle email={EmailObj[0].email} />
+            <div className={styles.messagesLi}>
+            {EmailObj[0].email.msg.map((msg) => (
                 <MsgLi key={msg._id} msg={msg} user={user} />
             ))}
+            </div>
             <TextArae />
             <div className={styles.SendBtnContainer}  >
                 <TrashBtn />

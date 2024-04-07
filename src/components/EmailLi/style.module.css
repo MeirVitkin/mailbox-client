@@ -1,6 +1,7 @@
 
 .container {
     display: flex;
+    width: 280px;
     padding: 8px;
     gap: 10px;
     background-color: var(--gray-bg-color);
@@ -10,10 +11,10 @@
     box-shadow: 0 5px 5px rgba(75, 74, 74, 0.5);
     cursor: pointer;
 }
-.container:active{
+/* .container:active{
     background-color: #ffff;
 
-}
+} */
 
 .content {
     flex-grow: 1;

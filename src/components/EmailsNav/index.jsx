@@ -15,7 +15,7 @@ import { NavLink } from 'react-router-dom';
 
 
 const NavIcons = [{ icon: <HiInboxIn />, name: "inbox" },
-{ icon: <IoIosSend />, name: "Sent Emails" },
+{ icon: <IoIosSend />, name: "SentEmails" },
 { icon: <TiStarFullOutline />, name: "Favorite" },
 { icon: <BiSolidPencil />, name: "Draft" },
 { icon: <MdDeleteForever />, name: "Deleted" },
@@ -27,13 +27,14 @@ export const EmailsNav = () => {
         <>
             <div className={styles.container}  >
                 <Logo />
-                <div className={styles.mewMsg}  ><a title='link' href="/login"><NewMsgBtn /> </a></div>
+                <div className={styles.mewMsg}  ><NavLink title='newMessage' to="newMessage"><NewMsgBtn /> </NavLink></div>
                 <nav>
                     <ul>
                         {NavIcons.map((icon, index) => (
-                            <li key={index}>
-                                <NavLink to={icon.name}><NavLi iconObj={icon} /> </NavLink>
-                            </li>
+                            <NavLink to={icon.name}
+                                     key={index}
+                                     className={ ({isActive})=> { return  `${isActive ? styles.active : ''} `} }>
+                            <NavLi iconObj={icon} /> </NavLink>
                         ))}
                     </ul>
                 </nav>

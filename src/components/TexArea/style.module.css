@@ -4,7 +4,7 @@ svg{
 
 }
 svg:hover{
-    color: var(--primary-color);
+    /* color: var(--primary-color); */
     cursor: pointer;
 }
 
