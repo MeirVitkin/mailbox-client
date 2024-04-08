@@ -9,10 +9,8 @@ export const Login = () => {
 
 
     const handleSubmit = (e) => {
-
         e.preventDefault();
         setIsLog(true);
-        console.log("i did it");
     }
     return (
         <div className={styles.container}>

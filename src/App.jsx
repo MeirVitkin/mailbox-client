@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { NavMainLayout } from "./layouts/NavMainLayout/index.jsx";
 import { EmailNavLayout } from "./layouts/EmailNavLayout/index.jsx";
 import { EmailsListLayout } from "./layouts/EmailsListLayout.jsx/index.jsx";
@@ -13,21 +13,25 @@ import { Login } from "./components/Login/index.jsx";
 function App() {
   const [isLog, setIsLog] = useState(false);
   const [popup, setPopup] = useState(false);
-  const [popupValue, setPopupValue] = useState();
 
   return (
     <div style={{ display: 'flex', height: '95vh', width: '100vw' }}>
-      <DataContext.Provider value={{ isLog, setIsLog, setPopup, popup, popupValue, setPopupValue }} >
+      <DataContext.Provider value={{ isLog, setIsLog, setPopup, popup }} >
         {popup && (
           <Popup />
         )}
 
-        {!isLog ? (
+        {
+        !isLog ? (
           <Login />
+          
         ) : (
 
 
           <Routes>
+            {/* <Route index element={<Navigate to='/login' />} />
+            <Route path='/login' element={<Login />} /> */}
+            
             <Route path="/" element={<NavMainLayout />} />
 
             <Route element={<NavMainLayout />}>
@@ -39,7 +43,8 @@ function App() {
               </Route>
             </Route>
           </Routes>
-        )}
+         )
+        }
       </DataContext.Provider>
 
 

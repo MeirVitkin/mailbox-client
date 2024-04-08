@@ -3,12 +3,12 @@
    gap: 12px;
    height: 40px;
    padding: 10px;
-    background-color:#ffff
+    /* background-color:#ffff */
 }
 
 .text{
     flex-grow: 1;
-    color: #071232;
+    /* color: #071232; */
     font-weight: 500;
     font-size: 15px;
 }

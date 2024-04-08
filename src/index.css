@@ -17,6 +17,7 @@ a,input,select, button{
   background-color: inherit;
   outline: none;
 }
+
 a{
   text-decoration: none;
   color: inherit;
