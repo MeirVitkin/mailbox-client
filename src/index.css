@@ -6,7 +6,7 @@
   font-family: "Kumbh Sans", sans-serif;
 }
 body{
-  background-color:var(--gray-bg-color);
+  background-color:#ffff;
   display: flex;
   height: 100vh;
 }
@@ -27,6 +27,9 @@ a{
   --text-color:#A2AAB4;
   --primary-color:#00A389;
   --gray-bg-color:#F4F6F8;
+  --header-padding:10px;
+  --header-height:80px;
+
 
 }
 ::-webkit-scrollbar{

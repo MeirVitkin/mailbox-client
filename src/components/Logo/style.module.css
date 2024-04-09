@@ -1,9 +1,10 @@
 .container {
     display: flex;
-    padding: 30px;
+    /* padding: 30px; */
     gap: 15px;
+    justify-content:center ;
     align-items: center;
-    height: 50px;
+    height: var(--header-height);
     background-color: white;
     border-bottom: 1px solid #a6adc1;
   }

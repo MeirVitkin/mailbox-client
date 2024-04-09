@@ -1,9 +1,11 @@
 
 .container {
     display: flex;
-    width: 280px;
     padding: 8px;
     gap: 10px;
+    width: 95%;
+    border-radius: 3%;
+
     background-color: var(--gray-bg-color);
 }
 
@@ -11,10 +13,6 @@
     box-shadow: 0 5px 5px rgba(75, 74, 74, 0.5);
     cursor: pointer;
 }
-/* .container:active{
-    background-color: #ffff;
-
-} */
 
 .content {
     flex-grow: 1;
@@ -23,7 +21,6 @@
     text-overflow: ellipsis;
 }
 .text{
-    width: 250px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

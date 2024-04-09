@@ -102,11 +102,11 @@ const emails = [
 ]
 
 export const EmailsList = () => {
-    const[emailList, setImelList]=useState(emails)
+    const [emailList, setImelList] = useState(emails)
 
     const hendalSearch = (value) => {
-        const fiteredEmails = emails.filter(email => email.email.subject.toLowerCase().includes(value.toLowerCase()) || email.email.lastDate.includes(value) )
-        setImelList(fiteredEmails);   
+        const fiteredEmails = emails.filter(email => email.email.subject.toLowerCase().includes(value.toLowerCase()) || email.email.lastDate.includes(value))
+        setImelList(fiteredEmails);
     }
 
 
@@ -115,7 +115,9 @@ export const EmailsList = () => {
         <>
             <div className={styles.contaner} >
                 <div className={styles.inputSearch}> <InputSearch hendalSearch={hendalSearch} /> </div>
-                {emailList.map((email, i) => (<EmailLi email={email} key={i} />))}
+                <div className={styles.emailsList}>
+                    {emailList.map((email, i) => (<EmailLi email={email} key={i} />))}
+                </div>
             </div>
         </>
     )
