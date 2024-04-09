@@ -10,12 +10,14 @@ import { TiStarFullOutline } from "react-icons/ti";
 import { MdDeleteForever } from "react-icons/md";
 import { BiSolidPencil } from "react-icons/bi";
 import { MdExpandMore } from "react-icons/md";
-import { Outlet } from 'react-router';
+import { axiosReq } from '../../functions/axiosReq';
+
 import { NavLink } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 
 const NavIcons = [{ icon: <HiInboxIn />, name: "inbox" },
-{ icon: <IoIosSend />, name: "Sent" },
+{ icon: <IoIosSend />, name: "send" },
 { icon: <TiStarFullOutline />, name: "Favorite" },
 { icon: <BiSolidPencil />, name: "Draft" },
 { icon: <MdDeleteForever />, name: "Deleted" },
@@ -23,6 +25,17 @@ const NavIcons = [{ icon: <HiInboxIn />, name: "inbox" },
 ]
 
 export const EmailsNav = () => {
+
+    const [notifications, setNotifications] = useState({});
+
+    const fechNotifications = async()=>{
+        const data = await axiosReq({ method:'GET',url:'chat/notifications'})
+        setNotifications(data)
+    }
+    useEffect(() => {
+      fechNotifications();
+    }, [])
+    
     return (
         <>
             <div className={styles.container}  >
@@ -35,7 +48,7 @@ export const EmailsNav = () => {
                                 to={icon.name}
                                 key={index}
                                 className={({ isActive }) => isActive ? styles.active : ''}>
-                                <NavLi iconObj={icon} />
+                                <NavLi iconObj={icon} notifications={notifications} />
                             </NavLink>
                         ))}
                     </ul>
