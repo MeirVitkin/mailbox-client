@@ -21,7 +21,7 @@ export const NavMain = () => {
         <ul className={styles.iconsContainer}>
           {NavMainIconsObj.map((iconObj, index) => (
               <NavLink key={index}
-               to={iconObj.title} 
+               to={`/home/${iconObj.title}`} 
                className={ ({isActive})=> { return  `${styles.icon}  ${isActive ? styles.active : ''} `} }>
                 <li >{iconObj.icon}</li>
               </NavLink> 

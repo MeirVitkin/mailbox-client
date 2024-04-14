@@ -1,20 +1,22 @@
-.container{
+.container {
     width: 100%;
-  height: 95vh;
+    height: 95vh;
     display: flex;
     align-items: center;
-    justify-content: center;    
+    justify-content: center;
 }
 
-.form{
-display: flex;
-flex-direction: column;
+.form {
+    display: flex;
+    flex-direction: column;
 
 }
-.title{
+
+.title {
     padding-bottom: 25px;
 }
-.input{
+
+.input {
     padding: 10px;
     border-radius: 4px;
     height: 35px;
@@ -23,20 +25,23 @@ flex-direction: column;
 
 }
 
-.star{
+.star {
     color: crimson;
 }
-.a{
+
+.a {
     color: var(--primary-color);
 }
-.btn{
+
+.btn {
     align-items: center;
     padding-top: 25px;
     padding-bottom: 15px;
     display: flex;
     justify-content: space-between;
 }
-.register{
+
+.register {
     border-radius: 5px;
     cursor: pointer;
     width: 80px;
@@ -44,6 +49,7 @@ flex-direction: column;
     background-color: var(--primary-color);
     color: white;
 }
-.login{
+
+.login {
     line-height: 25px;
 }

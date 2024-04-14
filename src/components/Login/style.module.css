@@ -25,6 +25,9 @@ flex-direction: column;
 .a{
     color: var(--primary-color);
 }
+.error{
+    color: rgb(226, 78, 83);
+}
 .btnAforgot{
     align-items: center;
     padding-top: 25px;
